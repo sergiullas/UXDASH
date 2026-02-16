@@ -1,0 +1,233 @@
+.expansion {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid;
+  border-top: none;
+  border-radius: 0 0 16px 16px;
+  padding: 24px;
+  margin-top: -8px;
+  animation: slideDown 0.3s ease;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.sectionTitle {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+/* Distribution Bars */
+.distributionItem {
+  margin-bottom: 8px;
+}
+
+.distributionHeader {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.vendorName {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.progressTrack {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progressBar {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+/* List Items */
+.listItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.listLabel {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.frictionValue {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.trendIcon {
+  font-size: 10px;
+}
+
+.breakdownValue {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.spendValue {
+  font-size: 12px;
+  color: #FF9500;
+  font-weight: 500;
+}
+
+.percentage {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.incidentValue {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.severity {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Driver Cards */
+.driverCard {
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  margin-bottom: 8px;
+  border-left: 2px solid;
+}
+
+.driverLabel {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 4px;
+}
+
+.driverNote {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Governance Row */
+.governanceRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.ownerLabel {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ownerValue {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.exceptionsBadge {
+  background: rgba(255, 149, 0, 0.15);
+  border: 1px solid rgba(255, 149, 0, 0.3);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 11px;
+  color: #FF9500;
+}
+
+/* AI Recommendation */
+.aiRecommendation {
+  background: linear-gradient(135deg, rgba(88, 86, 214, 0.1) 0%, rgba(175, 82, 222, 0.05) 100%);
+  border: 1px solid rgba(88, 86, 214, 0.2);
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.aiHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.aiIcon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #5856D6, #AF52DE);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.aiLabel {
+  font-size: 11px;
+  font-weight: 600;
+  color: #AF52DE;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.aiContent {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+}
+
+.actionButton {
+  margin-top: 12px;
+  background: rgba(88, 86, 214, 0.2);
+  border: 1px solid rgba(88, 86, 214, 0.4);
+  border-radius: 6px;
+  padding: 8px 14px;
+  color: #AF52DE;
+  font-size: 12px;
+  font-weight: 500;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+
+.actionButton:hover {
+  background: rgba(88, 86, 214, 0.3);
+}
+
+@keyframes slideDown {
+  from { 
+    opacity: 0; 
+    transform: translateY(-10px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
