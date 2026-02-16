@@ -1,0 +1,724 @@
+/* Overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+  padding: 20px;
+}
+
+/* Modal Container */
+.modal {
+  background: #1a1a2e;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 640px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.3s ease;
+  overflow: hidden;
+}
+
+/* Header */
+.header {
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.headerTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.subtitle {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 2px;
+}
+
+.closeButton {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.closeButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Body */
+.body {
+  padding: 20px 24px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* Context Banner */
+.contextBanner {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 20px;
+}
+
+.contextRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+}
+
+.contextLabel {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  min-width: 80px;
+}
+
+.contextValue {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: right;
+}
+
+/* Step Indicator */
+.stepIndicator {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+}
+
+.stepItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+}
+
+.stepCircle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 600;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.stepCircleActive {
+  background: linear-gradient(135deg, #5856D6, #AF52DE);
+  color: #fff;
+}
+
+.stepCircleCompleted {
+  background: #34C759;
+  color: #fff;
+}
+
+.stepCirclePending {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.stepLabel {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.3);
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.stepLabelActive {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+.stepConnector {
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 0 8px;
+  min-width: 12px;
+}
+
+.stepConnectorCompleted {
+  background: #34C759;
+}
+
+/* Section Title */
+.sectionTitle {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+/* Option Cards */
+.optionsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.optionCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.optionCard:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.optionCardSelected {
+  border-color: rgba(88, 86, 214, 0.5);
+  background: rgba(88, 86, 214, 0.08);
+}
+
+.optionHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.optionBadge {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.5);
+  flex-shrink: 0;
+}
+
+.optionBadgeSelected {
+  background: linear-gradient(135deg, #5856D6, #AF52DE);
+  color: #fff;
+}
+
+.optionLabel {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  flex: 1;
+}
+
+.recommendedBadge {
+  font-size: 10px;
+  font-weight: 600;
+  color: #AF52DE;
+  background: rgba(175, 82, 222, 0.15);
+  border: 1px solid rgba(175, 82, 222, 0.25);
+  border-radius: 4px;
+  padding: 2px 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.optionDescription {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 8px;
+  padding-left: 36px;
+}
+
+.optionOutcome {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.65);
+  padding-left: 36px;
+  margin-bottom: 10px;
+}
+
+.optionStats {
+  display: flex;
+  gap: 16px;
+  padding-left: 36px;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.statValue {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.riskLower {
+  color: #34C759;
+}
+
+.riskSame {
+  color: #FF9500;
+}
+
+.riskHigher {
+  color: #FF3B30;
+}
+
+.costLow {
+  color: #34C759;
+}
+
+.costMedium {
+  color: #FF9500;
+}
+
+.costHigh {
+  color: #FF3B30;
+}
+
+/* Trade-off Matrix */
+.matrixWrapper {
+  overflow-x: auto;
+  margin: 0 -4px;
+}
+
+.matrix {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.matrix th {
+  text-align: left;
+  padding: 8px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.matrix td {
+  padding: 8px 10px;
+  color: rgba(255, 255, 255, 0.7);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.matrixColSelected {
+  background: rgba(88, 86, 214, 0.08);
+}
+
+.matrixDimension {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.matrixArrow {
+  margin-right: 4px;
+}
+
+/* Approval Chain */
+.approvalTimeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+
+.approvalStep {
+  display: flex;
+  gap: 14px;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.approvalStep:last-child {
+  padding-bottom: 0;
+}
+
+.approvalLine {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.approvalCircle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.4);
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.approvalCircleYou {
+  background: rgba(88, 86, 214, 0.2);
+  border-color: rgba(88, 86, 214, 0.4);
+  color: #AF52DE;
+}
+
+.approvalConnector {
+  width: 1px;
+  flex: 1;
+  background: rgba(255, 255, 255, 0.08);
+  margin-top: 4px;
+}
+
+.approvalContent {
+  flex: 1;
+  padding-top: 2px;
+}
+
+.approvalRole {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 2px;
+}
+
+.approvalRoleYou {
+  color: #AF52DE;
+}
+
+.approvalMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.scopeBadge {
+  font-size: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  padding: 2px 6px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.slaBadge {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.approvalValidation {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.approvalAssignee {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 2px;
+}
+
+.assigneeYou {
+  color: #AF52DE;
+  font-weight: 600;
+}
+
+.statusDot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  margin-right: 4px;
+}
+
+.statusPending {
+  background: #FF9500;
+}
+
+/* Confirmation Step */
+.confirmFields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fieldLabel {
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.fieldStatic {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+.textarea {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 13px;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 80px;
+  transition: border-color 0.2s ease;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: rgba(88, 86, 214, 0.5);
+}
+
+.textarea::placeholder {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.charCount {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.25);
+  text-align: right;
+}
+
+.charCountValid {
+  color: #34C759;
+}
+
+.dateInput {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 13px;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+  color-scheme: dark;
+}
+
+.dateInput:focus {
+  outline: none;
+  border-color: rgba(88, 86, 214, 0.5);
+}
+
+.notifyGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.notifyChip {
+  font-size: 11px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.notifyChip:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.notifyChipSelected {
+  background: rgba(88, 86, 214, 0.15);
+  border-color: rgba(88, 86, 214, 0.3);
+  color: #AF52DE;
+}
+
+.confirmStatement {
+  background: rgba(88, 86, 214, 0.08);
+  border: 1px solid rgba(88, 86, 214, 0.15);
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin-top: 4px;
+}
+
+.confirmHighlight {
+  color: #AF52DE;
+  font-weight: 600;
+}
+
+/* Footer */
+.footer {
+  padding: 16px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.backButton {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 8px 16px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.backButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.nextButton {
+  background: linear-gradient(135deg, #5856D6, #AF52DE);
+  border: none;
+  border-radius: 8px;
+  padding: 8px 20px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nextButton:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.nextButton:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.cancelButton {
+  background: none;
+  border: none;
+  padding: 8px 16px;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 13px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.cancelButton:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footerRight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .modal {
+    max-height: 90vh;
+  }
+
+  .header {
+    padding: 16px 16px 12px;
+  }
+
+  .body {
+    padding: 16px;
+  }
+
+  .footer {
+    padding: 12px 16px;
+  }
+
+  .stepLabel {
+    display: none;
+  }
+
+  .optionStats {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .matrix {
+    font-size: 11px;
+  }
+
+  .matrix th,
+  .matrix td {
+    padding: 6px 6px;
+  }
+}
