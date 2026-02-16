@@ -1,7 +1,11 @@
+import { useState } from 'react';
 import { getStateColor } from '../data/dashboardData';
+import ActionPathModal from './ActionPathModal/ActionPathModal';
 import styles from './IndexExpansion.module.css';
 
 const IndexExpansion = ({ index, colors }) => {
+  const [isActionPathOpen, setIsActionPathOpen] = useState(false);
+
   return (
     <div 
       className={styles.expansion}
@@ -148,10 +152,20 @@ const IndexExpansion = ({ index, colors }) => {
           <span className={styles.aiLabel}>Recommendation</span>
         </div>
         <div className={styles.aiContent}>{index.recommendation}</div>
-        <button className={styles.actionButton}>
+        <button
+          className={styles.actionButton}
+          onClick={() => setIsActionPathOpen(true)}
+        >
           View Action Path →
         </button>
       </div>
+
+      <ActionPathModal
+        isOpen={isActionPathOpen}
+        onClose={() => setIsActionPathOpen(false)}
+        index={index}
+        onSubmit={(decision) => console.log('Decision submitted:', decision)}
+      />
     </div>
   );
 };
